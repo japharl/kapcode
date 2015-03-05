@@ -8,7 +8,7 @@ if (-e '/dev/sda1'){
   } else {
     system('touch /tmp/write.lock');
     system('mount /dev/sda1 /media/data');
-    if (-e "/media/data/rm.txt){
+    if (-e "/media/data/rm.txt"){
       system ("rm /home/pi/data/*");
       system ("rm /home/pi/last.txt");
       system ("rm /tmp/write.lock");
