@@ -1,6 +1,8 @@
 use Proc::Background;
 use File::Slurp;
 
+# This should be run as root in the /home/pi directory.
+
 if (-e '/dev/sda1'){
   print "USB Detected.\n";
   if (-e '/tmp/write.lock'){
