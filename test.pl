@@ -8,6 +8,12 @@ if (-e '/dev/sda1'){
   } else {
     system('touch /tmp/write.lock');
     system('mount /dev/sda1 /media/data');
+    if (-e "/media/data/rm.txt){
+      system ("rm /home/pi/data/*");
+      system ("rm /home/pi/last.txt");
+      system ("rm /tmp/write.lock");
+      system ("sudo shutdown -h -P now");
+    }
     system ("cp -R /home/pi/data/* /media/data/");
     system('rm /tmp/write.lock');
     system('sudo shutdown -h -P now');
