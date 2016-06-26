@@ -42,7 +42,7 @@ while (ShakeFlag):
       if Counter < 1  :
         ShakeFlag = False
 sense.clear()
-
+time.sleep(1)
 camera.capture('image.jpg')
 sense.clear(post)
 time.sleep(2)
