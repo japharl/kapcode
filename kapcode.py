@@ -17,7 +17,7 @@ ShakeFlag = True;
 Counter = 1000;
 
 camera = picamera.PiCamera()
-camera.resolution=(1027,768)
+camera.resolution = (2592, 1944)
 camera.iso=800
 camera.start_preview()
 time.sleep(2)
