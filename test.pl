@@ -2,6 +2,12 @@ use Proc::Background;
 use File::Slurp;
 
 # This should be run as root in the /home/pi directory.
+# called via cronjob.
+
+if (!(-e "/media/data")){
+   my $pb = Proc::Background->new("mkdir /media/data");
+   $pb->wait();
+}
 
 if (-e '/dev/sda1'){
   print "USB Detected.\n";
@@ -23,11 +29,6 @@ if (-e '/dev/sda1'){
 }
 else {
   print "Taking photos!\n";
-  if (!(-e '/home/pi/last.txt')){
-    write_file('/home/pi/last.txt',0);
-  }
-  my $num = read_file( '/home/pi/last.txt' ) ;
-  $num = $num + 1;
   print "Image # $num\n";
   my $pb = Proc::Background->new('raspistill -o /home/pi/data/image.' . $num . '.jpg');
   $pb->wait();
