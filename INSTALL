@@ -1,0 +1,2 @@
+1. enable camera via raspi-config.
+2. apt-get update ; apt-get upgrade -y; apt-get dist-upgrade -y
