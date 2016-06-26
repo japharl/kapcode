@@ -2,6 +2,8 @@ mport time
 import math
 from sense_hat import SenseHat
 
+# This should be installed in /home/pi
+
 sense = SenseHat()
 
 pre = [255, 0, 0]  # Red
@@ -13,6 +15,12 @@ sense.clear(pre)
 Threshold = 0.1
 ShakeFlag = True;
 Counter = 1000;
+
+camera = picamera.PiCamera()
+camera.resolution=(1027,768)
+camera.iso=800
+camera.start_preview()
+time.sleep(2)
 
 while (ShakeFlag):
 
@@ -33,14 +41,13 @@ while (ShakeFlag):
     Counter = Counter - 1;
       if Counter < 1  :
         ShakeFlag = False
-camera = picamera.PiCamera()
-camera.resolution=(1027,768)
-camera.iso=800
 sense.clear()
+
 camera.capture('image.jpg')
 sense.clear(post)
 time.sleep(2)
 sense.clear()
+camera.stop_preview()
 print(sense.humidity)
 print(sense.temp)
 print(sense.pressure)
