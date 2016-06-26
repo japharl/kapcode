@@ -28,10 +28,6 @@ if (-e '/dev/sda1'){
   }
 }
 else {
-  print "Taking photos!\n";
-  print "Image # $num\n";
-  my $pb = Proc::Background->new('raspistill -o /home/pi/data/image.' . $num . '.jpg');
-  $pb->wait();
-  write_file( '/home/pi/last.txt', $num ) ;
+# Fill in here.
 }
 
