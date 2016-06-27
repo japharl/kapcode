@@ -44,7 +44,7 @@ while (ShakeFlag):
     ShakeFlag = False
 sense.clear()
 time.sleep(1)
-camera.capture('image.jpg')
+camera.capture('/home/pi/image.jpg')
 sense.clear(post)
 time.sleep(2)
 sense.clear()
