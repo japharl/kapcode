@@ -9,4 +9,10 @@
 9. cd kapcode
 10. cp * ..
 11. cd ..
-12. 
+12. sudo vi /etc/rc.local
+# Add line:
+/usr/bin/perl /home/pi/init.pl
+# after fi before exit 0 :wq!
+13. sudo crontab -e
+14. # add line 
+* * * * * /usr/bin/perl /home/pi/run.pl
