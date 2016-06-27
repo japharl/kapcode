@@ -1,2 +1,4 @@
 1. enable camera via raspi-config.
 2. apt-get update ; apt-get upgrade -y; apt-get dist-upgrade -y
+3. sudo apt-get install sense-hat
+4. sudo pip-3.2 install pillow
