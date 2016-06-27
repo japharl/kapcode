@@ -13,4 +13,6 @@ if (-e '/dev/sda1'){
   $pb1->wait();
   my $pb2 = Proc::Background->new("umount /media/usb");
   $pb2->wait();
+  my $pb3 = Proc::Background->new("python /home/pi/message.py Files Coppied.");
+  $pb3->wait();
 }
