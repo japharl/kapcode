@@ -14,7 +14,7 @@ if (!(-e '/home/pi/last.txt')){
 my $num = read_text( '/home/pi/last.txt' ) ;
 $num = $num + 1;
 print "Image # $num\n";
-my $pb = Proc::Background->new('python camera.py > out.txt ');
+my $pb = Proc::Background->new('python /home/pi/camera.py > /home/pi/out.txt ');
 $pb->wait();
 write_text( '/home/pi/last.txt', $num ) ;
 my $pb2 = Proc::Background->new("mv /home/pi/image.jpg /home/pi/photos/image_" . $num . ".jpg");
