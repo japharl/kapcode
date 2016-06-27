@@ -1,4 +1,5 @@
-mport time
+import time
+import picamera
 import math
 from sense_hat import SenseHat
 
@@ -39,8 +40,8 @@ while (ShakeFlag):
     ShakeFlag = False
   else :
     Counter = Counter - 1;
-      if Counter < 1  :
-        ShakeFlag = False
+  if Counter < 1  :
+    ShakeFlag = False
 sense.clear()
 time.sleep(1)
 camera.capture('image.jpg')
