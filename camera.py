@@ -12,7 +12,7 @@ pre = [255, 0, 0]  # Red
 post = [0,255,0]
 
 sense.clear(pre)
-# Code translated from https://github.com/danjperron/mpu6050TestInC/tree/master
+
 Threshold = 0.1
 ShakeFlag = True;
 Counter = 1000;
@@ -23,6 +23,7 @@ camera.iso=800
 camera.start_preview()
 time.sleep(2)
 
+# Code translated from https://github.com/danjperron/mpu6050TestInC/tree/master
 while (ShakeFlag):
 
   data1 = sense.get_accelerometer_raw()
