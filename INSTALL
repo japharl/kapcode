@@ -12,7 +12,6 @@
 9. cd kapcode
 10. cp * .. 
 11. cd ..
-
 12. sudo vi /etc/rc.local
 # Add line:
 /usr/bin/perl /home/pi/init.pl
@@ -20,3 +19,10 @@
 13. sudo crontab -e
 14. # add line 
 * * * * * /usr/bin/perl /home/pi/run.pl
+
+
+The following is for install a cannon camera using chdk
+1. cd
+2. git clone git://git.drogon.net/wiringPi
+3. cd ./wiringPi
+4. sudo ./build 
