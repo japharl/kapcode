@@ -5,7 +5,8 @@
 5. sudo curl -L https://cpanmin.us | perl - --sudo App::cpanminus
 6. sudo cpanm Proc::Background
 7. sudo cpanm File::Slurper
-8. git-clone https://github.com/japharl/kapcode.git
+7a. sudo su -
+8. git clone https://github.com/japharl/kapcode.git
 9. cd kapcode
 10. cp * .. # cp to /root/ directory as root
 11. cd ..
