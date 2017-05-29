@@ -1,6 +1,6 @@
 # kapcode
 
-This is the code that I use when I fly my kite and take photos with the reaspberry pi.
+This is the code that I use when I fly my kite and take photos with the reaspberry pi.  Due to power requirements, recommend an a+ or a pi zero variant.
 
 Example photos : https://www.flickr.com/photos/japharl/albums/72157645370759040
 
