@@ -23,7 +23,7 @@ while (1==1):
   file = open("/home/pi/kapcode/last.txt","w");
   file.write(str(i))
   file.close()
-  Threshold = 0.1
+  Threshold = 0.05
   ShakeFlag = True;
   Counter = 1000;
   time.sleep(2)
