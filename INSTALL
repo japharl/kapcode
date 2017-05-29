@@ -4,14 +4,8 @@
 4. # install pycamera library
 4a. sudo apt-get install python-setuptools
 4b. easy_install --user picamera
-5. sudo curl -L https://cpanmin.us | perl - --sudo App::cpanminus
-6. sudo cpanm Proc::Background
-7. sudo cpanm File::Slurper
 
 8. git clone https://github.com/japharl/kapcode.git
-9. cd kapcode
-10. cp * .. 
-11. cd ..
 12. sudo vi /etc/rc.local
 # Add line:
-/usr/bin/perl /home/pi/init.pl
+nohup bash -x /home/pi/kapcode/init.sh &
