@@ -4,8 +4,17 @@
 4. # install pycamera library
 4a. sudo apt-get install python-setuptools
 4b. easy_install --user picamera
-
-8. git clone https://github.com/japharl/kapcode.git
-12. sudo vi /etc/rc.local
+5. git clone https://github.com/japharl/kapcode.git
+6. sudo chmod -R 777 /home/pi/*
+7. sudo chown -R pi:pi /home/pi/*
+8. sudo chmod 777 /etc/rc.local
+9. sudo vi /etc/rc.local
 # Add line:
 nohup bash -x /home/pi/kapcode/init.sh &
+
+# Optional
+
+10. sudo apt-get install lighttpd 
+11. vi /etc/lighttpd.conf
+Change server.root to:
+/home/pi/kapcode/photos
