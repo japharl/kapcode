@@ -21,4 +21,4 @@ nohup bash -x /home/pi/kapcode/init.sh &
 11. vi /etc/lighttpd.conf
 Change server.root to:
 /home/pi/kapcode/photos
-Then (while taking photos) point to http://[ip]/ for latest photo.  Hit referesh if needed.
+Then (while taking photos) point to http://[ip]/latest.html for latest photo.  Hit referesh if needed.
