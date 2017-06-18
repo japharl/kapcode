@@ -16,6 +16,7 @@ sense.clear(pre)
 time.sleep(2)
 sense.clear()
 camera = picamera.PiCamera()
+camera.led = False
 camera.start_preview()
 
 while (1==1):
@@ -36,7 +37,7 @@ while (1==1):
     CurrentForce = math.sqrt( (data1['x'] - data2['x']) * ( data1['x'] - data2['x']) +
                               (data1['y'] - data2['y']) * ( data1['y'] - data2['y']) +
                               (data1['z'] - data2['z']) * ( data1['z'] - data2['z']))
-    print "Current: " , CurrentForce, "Counter: ", Counter
+    #print "Current: " , CurrentForce, "Counter: ", Counter
     if CurrentForce < Threshold :
       ShakeFlag = False
     else :
@@ -46,10 +47,10 @@ while (1==1):
   camera.capture("/home/pi/kapcode/photos/image_" + str(i) + ".jpg")
   time.sleep(2)
   f=open("/home/pi/kapcode/photos/log" + str(i) + ".txt","w");
-  f.write("I" + str(i) )
-  f.write("Humiditiy: " + str(sense.humidity))
-  f.write("Temp: " + str(sense.temp))
-  f.write("Pressure:" + str(sense.pressure))
+  f.write("I" + str(i) + "\n" )
+  f.write("Humiditiy: " + str(sense.humidity) + "\n")
+  f.write("Temp: " + str(sense.temp) + "\n")
+  f.write("Pressure:" + str(sense.pressure) + "\n")
   f.close()
 
   f = open("/home/pi/kapcode/photos/latest.html","w");
