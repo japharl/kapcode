@@ -17,6 +17,7 @@ time.sleep(2)
 sense.clear()
 camera = picamera.PiCamera()
 camera.led = False
+camera.resolution=(2592,1944)
 camera.start_preview()
 
 while (1==1):
