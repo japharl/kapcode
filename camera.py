@@ -13,12 +13,18 @@ sense = SenseHat()
 pre = [255, 0, 0]  # Red
 
 sense.clear(pre)
-time.sleep(2)
+time.sleep(30) # increased to let file system catch up.
 sense.clear()
 camera = picamera.PiCamera()
 camera.led = False
 camera.resolution=(2592,1944)
 camera.start_preview()
+
+def doExit():
+    sense.clear()
+    sys.exit(0)
+
+sense.stick.direction_any = doExit
 
 while (1==1):
   i = i + 1
