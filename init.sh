@@ -10,3 +10,6 @@ fi
 sudo chown -R pi:pi /home/pi/kapcode/*
 sudo chmod -R 777 /home/pi/kapcode/*
 python /home/pi/kapcode/camera.py
+python /home/pi/kapcode/message.py Shuting down.
+sleep 10
+shutdown -P now
