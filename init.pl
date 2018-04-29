@@ -11,6 +11,9 @@ if (-e '/dev/sda1'){
   $pb0->wait();
   my $pb1 = Proc::Background->new("cp /home/pi/kapcode/photos/* /media/usb/");
   $pb1->wait();
+   my $pb2x = Proc::Background->new("/bin/rm -rf /home/pi/kapcode/photos/*");
+   $pb2x->wait();
+   write_text("/home/pi/kapcode/last.txt",0);
   # If the file exit exists on the root of the usb device, the script will exit, not shutdown the pc, and will not start the camera script.
   if (-e "/media/usb/exit"){
     my $pbe = Proc::Background->new("touch /home/pi/kapcode/exit");
