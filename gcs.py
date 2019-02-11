@@ -75,5 +75,4 @@ def l1(l,val):
         updateDisplay()
         return "ok"
 
-lines[2]="Run this via flask"
 updateDisplay()
