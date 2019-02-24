@@ -24,7 +24,6 @@ On the local GCS:
 
 0. install minimal raspberry pi raspbian configuration.
 0a. Don't install peripherals to the pi until prompted. :)
-* https://learn.adafruit.com/setting-up-a-raspberry-pi-as-a-wifi-access-point/install-software
 1. sudo raspi-config 
 1a. connect your local access point via primary wifi access point on board.
 1b.  enable i2c / ssh (optional)
@@ -37,3 +36,4 @@ On the local GCS:
 6. git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 7. sudo python setup.py install
 8. sudo i2cdetect -y 1 # Verify 3c is installed.
+9. sudo apt-get install dnsmasq hostapd # Configure wlan1 and wlan0 
