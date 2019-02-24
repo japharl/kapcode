@@ -11,15 +11,22 @@ file.close()
 
 sense = SenseHat()
 
-pre = [255, 0, 0]  # Red
-
-sense.clear(pre)
-time.sleep(30) # increased to let file system catch up.
-sense.clear()
 camera = picamera.PiCamera()
 camera.led = False
 camera.resolution=(2592,1944)
 camera.start_preview()
+time.sleep(10)
+T = 0.0
+# Wait till barometric pressure is > 0
+while (t == 0.0):
+  t = sense.pressure
+  time.sleep(1)
+  
+# Wait till barometric pressure is < last pressure - 2 
+c = t
+while ( c > t - .2):
+  c = sense.pressure
+  time.sleep(1)
 
 while (True):
   for event in sense.stick.get_events():
