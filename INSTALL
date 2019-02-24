@@ -4,6 +4,8 @@ On the remote sensor:
 1. enable camera via raspi-config.
 1a. connect to your local network via raspi-config
 1b. enable i2c communication
+1c. if applicable, change country code for keyboard.
+1d. if applicable, enable sshd.
 2. apt-get update ; apt-get upgrade -y; apt-get dist-upgrade -y
 3. sudo apt-get install sense-hat build-essential git
 4. sudo apt-get install python3-picamera -y 
