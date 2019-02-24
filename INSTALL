@@ -1,10 +1,11 @@
 On the remote sensor:
 
-0. install full raspberry pi os configuration.  
+0. install minimal raspberry pi os configuration.  
 1. enable camera via raspi-config.
+1a. connect to your local network via raspi-config
 2. apt-get update ; apt-get upgrade -y; apt-get dist-upgrade -y
 3. sudo apt-get install sense-hat build-essential git
-4. sudo apt-get install python3-picamera pi-camera -y 
+4. sudo apt-get install python3-picamera -y 
 5. sudo apt-get install gpsd gpsd-clients python-gps
 6. wget https://bootstrap.pypa.io/get-pip.py
 7. sudo python3 get-pip.py
