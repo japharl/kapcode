@@ -24,6 +24,7 @@ On the local GCS:
 
 0. install minimal raspberry pi raspbian configuration.
 0a. Don't install peripherals to the pi until prompted. :)
+* https://learn.adafruit.com/setting-up-a-raspberry-pi-as-a-wifi-access-point/install-software
 1. sudo raspi-config 
 1a. connect your local access point via primary wifi access point on board.
 1b.  enable i2c / ssh (optional)
