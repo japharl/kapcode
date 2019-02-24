@@ -58,6 +58,3 @@ while (True):
   f.write("Pressure:" + str(sense.pressure) + "\n")
   f.close()
 
-  f = open("/home/pi/kapcode/photos/latest.html","w");
-  f.write("<HTML><BODY><IMG SRC=\"image_" + str(i) + ".jpg\"></IMG></BODY></HTML>")
-  f.close()
