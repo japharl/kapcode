@@ -3,13 +3,12 @@ On the remote sensor:
 0. install minimal raspberry pi os configuration.  
 1. enable camera via raspi-config.
 1a. connect to your local network via raspi-config
+1b. enable i2c communication
 2. apt-get update ; apt-get upgrade -y; apt-get dist-upgrade -y
 3. sudo apt-get install sense-hat build-essential git
 4. sudo apt-get install python3-picamera -y 
-5. sudo apt-get install gpsd gpsd-clients python-gps
 6. wget https://bootstrap.pypa.io/get-pip.py
 7. sudo python3 get-pip.py
-8. sudo pip install gpsd-py3
 9. git clone https://github.com/japharl/kapcode.git
 10. sudo chmod -R 777 /home/pi/kapcode/*
 11. sudo chown -R pi:pi /home/pi/kapcode/*
