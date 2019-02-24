@@ -7,5 +7,3 @@ Example photos : <a href="https://photos.google.com/share/AF1QipMrI8DwWHl2Rc-yY2
 Website: https://kite.zakz.info
 
 <a href="https://codeclimate.com/github/japharl/kapcode"><img src="https://codeclimate.com/github/japharl/kapcode/badges/gpa.svg" /></a>
-
-Note - non-networked at this time; may be implementing in the future.  
