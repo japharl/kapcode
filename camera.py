@@ -14,8 +14,7 @@ sense = SenseHat()
 camera = picamera.PiCamera()
 camera.led = False
 camera.resolution=(2592,1944)
-camera.start_preview()
-time.sleep(10)
+time.sleep(1)
 T = sense.pressure
 # Wait till barometric pressure is > 0
 # due to bug
