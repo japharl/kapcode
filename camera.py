@@ -16,8 +16,9 @@ camera.led = False
 camera.resolution=(2592,1944)
 camera.start_preview()
 time.sleep(10)
-T = 0.0
+T = sense.pressure
 # Wait till barometric pressure is > 0
+# due to bug
 while (t == 0.0):
   t = sense.pressure
   time.sleep(1)
@@ -33,6 +34,7 @@ while (True):
     sys.exit(0)
 
   i = i + 1
+  # Write last photo taken.
   file = open("/home/pi/kapcode/last.txt","w");
   file.write(str(i))
   file.close()
@@ -49,7 +51,8 @@ while (True):
     CurrentForce = math.sqrt( (data1['x'] - data2['x']) * ( data1['x'] - data2['x']) +
                               (data1['y'] - data2['y']) * ( data1['y'] - data2['y']) +
                               (data1['z'] - data2['z']) * ( data1['z'] - data2['z']))
-    #print "Current: " , CurrentForce, "Counter: ", Counter
+
+    print "Current: " , CurrentForce, "Counter: ", Counter
     if CurrentForce < Threshold :
       ShakeFlag = False
     else :
@@ -64,4 +67,3 @@ while (True):
   f.write("Temp: " + str(sense.temp) + "\n")
   f.write("Pressure:" + str(sense.pressure) + "\n")
   f.close()
-
