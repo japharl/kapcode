@@ -53,11 +53,11 @@ while (True):
                               (data1['z'] - data2['z']) * ( data1['z'] - data2['z']))
 
     print "Current: " , CurrentForce, "Counter: ", Counter
-    if CurrentForce < Threshold :
+    if (CurrentForce < Threshold) :
       ShakeFlag = False
     else :
       Counter = Counter - 1;
-    if Counter < 1  :
+    if (Counter < 1)  :
       ShakeFlag = False
   camera.capture("/home/pi/kapcode/photos/image_" + str(i) + ".jpg")
   time.sleep(2)
