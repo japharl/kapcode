@@ -1,9 +1,10 @@
 import time
-from sense_hat import time
 import picamera
 import math
 import sys
 from sense_hat import SenseHat
+
+# from sense_hat import time
 
 file = open("/home/pi/kapcode/last.txt","r");
 i = int(file.readline())
