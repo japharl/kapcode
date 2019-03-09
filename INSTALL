@@ -32,7 +32,8 @@
 12a. cd /home/pi/kapcode/
 12b. sudo perl bluetooth.pl # follow prompts
 12c. aplay -D bluealsa out.wav # should hear audio prompt.
-13. sudo apt-get install cpanminus
+12d. (optional) rm out.wav
+13. sudo apt-get install cpanminus # This will take some time.  
 15. sudo cpanm Proc::Background File::Path File::Slurper
 16. sudo vi /etc/rc.local
 # Add line:
