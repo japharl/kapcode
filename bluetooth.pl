@@ -13,3 +13,5 @@ print $OUT "defaults.bluealsa.device \"$x\"\n";
 print $OUT "defaults.bluealsa.profile \"a2dp\"\n";
 print $OUT "defaults.bluealsa.delay 10000\n";
 close $OUT;
+
+open($OUT,">","/etc/rc.local");
