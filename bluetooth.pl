@@ -15,3 +15,5 @@ print $OUT "defaults.bluealsa.delay 10000\n";
 close $OUT;
 
 open($OUT,">","/etc/rc.local");
+print $OUT "echo 'connect 7B:08:72:E8:DD:13 \\n quit' | bluetoothctl \n"
+close $OUT;
