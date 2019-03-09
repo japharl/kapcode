@@ -52,7 +52,7 @@ while (True):
                               (data1['y'] - data2['y']) * ( data1['y'] - data2['y']) +
                               (data1['z'] - data2['z']) * ( data1['z'] - data2['z']))
 
-    print "Current: " , CurrentForce, "Counter: ", Counter
+    print ("Current: " , CurrentForce, "Counter: ", Counter + "\n")
     if (CurrentForce < Threshold) :
       ShakeFlag = False
     else :
