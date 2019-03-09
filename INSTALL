@@ -17,7 +17,7 @@
 5d. sudo bluetoothctl 
 5e. scan on
 5f. Turn on headphones, and note the newly added device. (may need to be in paring mode).
-5g. pair C4:45:67:23:29:F4
+5g. pair C4:45:67:23:29:F4 #### Note this address, we will configure your device in a second...
 5h. trust C4:45:67:23:29:F4
 5i. connect C4:45:67:23:29:F4 (should hear a beep on your audio device).
 5j. quit
