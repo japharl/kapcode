@@ -24,6 +24,8 @@
 5j. quit
 5k. aplay -D bluealsa:HCI=hci0,DEV=C4:45:67:23:29:F4,PROFILE=a2dp ./out.wav # You should get a congratulations message on your headphones.
 6. wget https://bootstrap.pypa.io/get-pip.py
+7. sudo python3 get-pip.py
+8. sudo apt-get -y install python3-rpi.gpio
 9. git clone https://github.com/japharl/kapcode.git
 10. sudo chmod -R 777 /home/pi/kapcode/*
 11. sudo chown -R pi:pi /home/pi/kapcode/*
