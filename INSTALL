@@ -1,10 +1,11 @@
--1. Grab a pair of cheap bluetooth headphones.
+-1. Grab a pair of cheap bluetooth headphones.  Will be used for audio prompts, etc.
 0. install minimal raspberry pi os configuration.  
 1. enable camera via raspi-config.
 1a. connect to your local network via raspi-config
 1b. enable i2c communication
 1c. if applicable, change country code for keyboard.
 1d. if applicable, enable sshd.
+1e. reboot
 2. apt-get update ; apt-get upgrade -y; apt-get dist-upgrade -y
 2a. reboot
 3. sudo apt-get install sense-hat build-essential git
@@ -13,7 +14,14 @@
 5a. sudo service bluealsa start
 5b. sudo apt-get install libttspico-utils
 5c. pico2wave --wave=out.wav "Your headphones work, yay!"
-
+5d. sudo bluetoothctl 
+5e. scan on
+5f. Turn on headphones, and note the newly added device. (may need to be in paring mode).
+5g. pair C4:45:67:23:29:F4
+5h. trust C4:45:67:23:29:F4
+5i. connect C4:45:67:23:29:F4 (should hear a beep on your audio device).
+5j. quit
+5k. aplay -D bluealsa:HCI=hci0,DEV=C4:45:67:23:29:F4,PROFILE=a2dp ./out.wav # You should get a congratulations message on your headphones.
 6. wget https://bootstrap.pypa.io/get-pip.py
 7. sudo python3 get-pip.py
 9. git clone https://github.com/japharl/kapcode.git
