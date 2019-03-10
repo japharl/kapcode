@@ -16,7 +16,7 @@ camera = picamera.PiCamera()
 camera.led = False
 camera.resolution=(2592,1944)
 time.sleep(1)
-T = sense.pressure
+t = sense.pressure
 # Wait till barometric pressure is > 0
 # due to bug
 while (t == 0.0):
