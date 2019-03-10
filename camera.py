@@ -79,7 +79,7 @@ while (True):
   f.write("Pressure:" + str(sense.pressure) + "\n")
   f.close()
   
-  def say(arg):
-    os.system("pico2wave --wave=/home/pi/kapcode/out.wav \"" + arg + "\"")
-    os.system("play -D bluealsa:HCI=hci0,DEV=" + bluetoothaddress + ",PROFILE=a2dp ./out.wav")
+def say(arg):
+  os.system("pico2wave --wave=/home/pi/kapcode/out.wav \"" + arg + "\"")
+  os.system("play -D bluealsa:HCI=hci0,DEV=" + bluetoothaddress + ",PROFILE=a2dp ./out.wav")
     
