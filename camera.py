@@ -1,7 +1,7 @@
 import time
 import picamera
 import math
-import sys
+import os
 from sense_hat import SenseHat
 
 # from sense_hat import time
@@ -16,6 +16,8 @@ camera = picamera.PiCamera()
 camera.led = False
 camera.resolution=(2592,1944)
 time.sleep(1)
+os.system("pico2wave --wave=out.wav \"Your headphones work, yay!\"")
+os.system("aplay -D bluealsa /home/pi/kapcode/out.wav")
 t = sense.pressure
 # Wait till barometric pressure is > 0
 # due to bug
