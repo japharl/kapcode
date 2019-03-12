@@ -1,3 +1,4 @@
+-1. Grab a pair of cheap bluetooth headphones.  Will be used for audio prompts, etc.
 0. install minimal raspberry pi os configuration.  
 1. enable camera via raspi-config.
 1a. connect to your local network via raspi-config
@@ -9,16 +10,34 @@
 2a. reboot
 3. sudo apt-get install sense-hat build-essential git
 4. sudo apt-get install python3-picamera -y 
+5. sudo apt-get install bluealsa -y
+5a. sudo service bluealsa start
+5b. sudo apt-get install libttspico-utils
+5c. pico2wave --wave=out.wav "Your headphones work, yay!"
+5d. sudo bluetoothctl 
+5e. scan on
+5f. Turn on headphones, and note the newly added device. (may need to be in paring mode).
+5fa. Note that for the following lines, the address C4:45:67:23:29:F4 is used for a pair of headphones.  Use your values instead.
+5g. pair C4:45:67:23:29:F4 #### Note this address, we will configure your device in a second...
+5h. trust C4:45:67:23:29:F4
+5i. connect C4:45:67:23:29:F4 (should hear a beep on your audio device).
+5j. quit
+5k. aplay -D bluealsa:HCI=hci0,DEV=C4:45:67:23:29:F4,PROFILE=a2dp ./out.wav # You should get a congratulations message on your headphones.
 6. wget https://bootstrap.pypa.io/get-pip.py
-7. sudo python3 get-pip.py
-8. sudo apt-get -y install python3-rpi.gpio
 9. git clone https://github.com/japharl/kapcode.git
 10. sudo chmod -R 777 /home/pi/kapcode/*
 11. sudo chown -R pi:pi /home/pi/kapcode/*
 12. sudo chmod 777 /etc/rc.local
+12aa. mv out.wav ./kapcode/
 12a. cd /home/pi/kapcode/
+12b. sudo perl bluetooth.pl # follow prompts
+12c. aplay -D bluealsa out.wav # should hear audio prompt.
+12d. (optional) rm out.wav
 13. sudo apt-get install cpanminus # This will take some time.  
 15. sudo cpanm Proc::Background File::Path File::Slurper
 16. sudo vi /etc/rc.local
 # Add line:
 nohup bash -x /home/pi/kapcode/init.sh &
+
+
+Partially built upon instructions here: https://robotzero.one/pi-zero-w-bluetooth-voice/ 
