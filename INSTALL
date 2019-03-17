@@ -1,4 +1,3 @@
--1. Grab a pair of cheap bluetooth headphones.  Will be used for audio prompts, etc.
 0. install minimal raspberry pi os configuration.  
 1. enable camera via raspi-config.
 1a. connect to your local network via raspi-config
@@ -42,4 +41,4 @@
 nohup bash -x /home/pi/kapcode/init.sh &
 
 
-Partially built upon instructions here: https://robotzero.one/pi-zero-w-bluetooth-voice/ 
+Note - in the future, if the underlying libaries become more stable, bluetooth etc. may be enabled.
