@@ -18,6 +18,9 @@ camera.resolution=(2592,1944)
 time.sleep(1)
 
 t = sense.pressure
+
+sense.show_message("Waiting for a non-zero pressure reading.")
+
 # Wait till barometric pressure is > 0
 # due to bug
 while (t == 0.0):
@@ -26,7 +29,8 @@ while (t == 0.0):
   
 # Wait till barometric pressure is < last pressure - 2 
 # (eg. off the ground)
-
+sense.show_message("READY")
+sys.exit(0)
 c = t
 while ( c > t - .2):
   c = sense.pressure
