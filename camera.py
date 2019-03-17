@@ -19,7 +19,7 @@ time.sleep(1)
 
 t = sense.pressure
 
-sense.show_message("Waiting for a non-zero pressure reading.")
+sense.show_message("WAIT")
 
 # Wait till barometric pressure is > 0
 # due to bug
@@ -30,12 +30,13 @@ while (t == 0.0):
 # Wait till barometric pressure is < last pressure - 2 
 # (eg. off the ground)
 sense.show_message("READY")
-sys.exit(0)
+
 c = t
 while ( c > t - .2):
   c = sense.pressure
   time.sleep(1)
 
+sense.show_message("STARTED")
 while (True):
   for event in sense.stick.get_events():
     os.sync()
