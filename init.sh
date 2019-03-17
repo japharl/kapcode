@@ -9,5 +9,5 @@ fi
 
 sudo chown -R pi:pi /home/pi/kapcode/*
 sudo chmod -R 777 /home/pi/kapcode/*
-python /home/pi/kapcode/camera.py
+sudo python3 /home/pi/kapcode/camera.py
 shutdown -P now
