@@ -10,15 +10,6 @@ from sense_hat import SenseHat
 file = open("/home/pi/kapcode/last.txt","r");
 i = int(file.readline())
 file.close()
-
-file2 = open("/home/pi/kapcode/bluetooth.txt","r");
-bluetoothaddress = file2.readline()
-file2.close
-
-def say(arg):
-  os.system("pico2wave --wave=/home/pi/kapcode/out.wav \"" + arg + "\"")
-  os.system("play -D bluealsa:HCI=hci0,DEV=" + bluetoothaddress + ",PROFILE=a2dp ./out.wav")
-
 sense = SenseHat()
 
 camera = picamera.PiCamera()
@@ -26,11 +17,6 @@ camera.led = False
 camera.resolution=(2592,1944)
 time.sleep(1)
 
-say("things seem good")
-sys.exit(0)
-
-os.system("pico2wave --wave=out.wav \"Your headphones work, yay!\"")
-os.system("aplay -D bluealsa /home/pi/kapcode/out.wav")
 t = sense.pressure
 # Wait till barometric pressure is > 0
 # due to bug
@@ -39,6 +25,8 @@ while (t == 0.0):
   time.sleep(1)
   
 # Wait till barometric pressure is < last pressure - 2 
+# (eg. off the ground)
+
 c = t
 while ( c > t - .2):
   c = sense.pressure
@@ -76,6 +64,7 @@ while (True):
     if (Counter < 1)  :
       ShakeFlag = False
   camera.capture("/home/pi/kapcode/photos/image_" + str(i) + ".jpg")
+  os.sync()
   time.sleep(2)
   f=open("/home/pi/kapcode/photos/log" + str(i) + ".txt","w");
   f.write("I" + str(i) + "\n" )
@@ -83,4 +72,4 @@ while (True):
   f.write("Temp: " + str(sense.temp) + "\n")
   f.write("Pressure:" + str(sense.pressure) + "\n")
   f.close()
-  
+  os.sync()
