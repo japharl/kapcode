@@ -7,6 +7,8 @@ mkpath '/media/usb';
 my $flag = 0;
 
 if (-e '/dev/sda1'){
+  my $pb3 = Proc::Background->new("python /home/pi/kapcode/message.py Detected USB (touch exit on root of usb drive to not automatic reboot)");
+  $pb3->wait();
   my $pb0 = Proc::Background->new("mount -t vfat /dev/sda1 /media/usb");
   $pb0->wait();
   my $pb1 = Proc::Background->new("cp /home/pi/kapcode/photos/* /media/usb/");
