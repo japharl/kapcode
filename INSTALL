@@ -11,7 +11,7 @@
 2c. reboot
 3. sudo apt-get install sense-hat build-essential git
 4. sudo apt-get install python3-picamera -y 
-6. wget https://bootstrap.pypa.io/get-pip.py
+5. sudo apt-get install python3-rpi.gpio
 9. git clone https://github.com/japharl/kapcode.git
 10. sudo chmod -R 777 /home/pi/kapcode/*
 11. sudo chown -R pi:pi /home/pi/kapcode/*
