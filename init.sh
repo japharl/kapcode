@@ -3,13 +3,11 @@ sudo perl /home/pi/kapcode/init.pl
 if [ -f /home/pi/kapcode/exit ]
 then
   echo "Exit requested";
-  rm /home/pi/capcode/exit;
+  rm /home/pi/kapcode/exit;
   exit 0 ;
 fi
 
 sudo chown -R pi:pi /home/pi/kapcode/*
 sudo chmod -R 777 /home/pi/kapcode/*
 python /home/pi/kapcode/camera.py
-python /home/pi/kapcode/message.py Shuting down.
-sleep 10
 shutdown -P now
