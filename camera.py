@@ -39,6 +39,7 @@ while ( c > t - .2):
 sense.show_message("STARTED")
 while (True):
   for event in sense.stick.get_events():
+    sense.show_message("SHUT DOWN")
     os.sync()
     sys.exit(0)
 
