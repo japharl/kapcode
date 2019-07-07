@@ -1,4 +1,5 @@
 0. install minimal raspberry pi os configuration.  
+0.1 ensure wait for wifi is disabled.
 1. enable camera via raspi-config.
 1a. connect to your local network via raspi-config
 1b. enable i2c communication
