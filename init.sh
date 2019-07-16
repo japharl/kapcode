@@ -10,4 +10,5 @@ fi
 sudo chown -R pi:pi /home/pi/kapcode/*
 sudo chmod -R 777 /home/pi/kapcode/*
 sudo python3 /home/pi/kapcode/camera.py
-shutdown -P now
+# shutdown -P now
+#### Reomve comment once kapcode camera.py runs correctly.
