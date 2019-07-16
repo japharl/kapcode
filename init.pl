@@ -6,9 +6,6 @@ mkpath '/home/pi/kapcode/photos';
 mkpath '/media/usb';
 my $flag = 0;
 
-my $pb = Proc::Background->new("python /home/pi/kapcode/message.py Bug Fix Wait As Applicable.");
-$pb->wait();
-
 if (-e '/dev/sda1'){
   my $pb3 = Proc::Background->new("python /home/pi/kapcode/message.py Detected USB (touch exit on root of usb drive to not automatic reboot)");
   $pb3->wait();
