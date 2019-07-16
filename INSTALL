@@ -22,6 +22,7 @@
 16. sudo vi /etc/rc.local
 # Add line:
 nohup bash -x /home/pi/kapcode/init.sh &
-
+17. Run bash -x /home/pi/kapcode/init.sh and verify things works (no error messages).
+18. Once there is no issues, remove commen from init.sh to shutdown the machine aftwards.
 
 Note - in the future, if the underlying libaries become more stable, bluetooth etc. may be enabled.  It's currently *not* enabled, instead opting for led messgaing only.
